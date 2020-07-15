@@ -16,6 +16,7 @@
     </header>
     <main>
         <div class="landing">
+
             <div>
                 <p class="avoid_warn">Avoid people with ease
                     Just a notification from us</p>
@@ -26,28 +27,50 @@
                 <img src="./assets/images/Screens.png" alt="">
             </div>
         </div>
+
+        <?php 
+            if(isset($_POST["submitButton"])){
+                processForm(); // If the user submits the form, call this function
+            }else{
+                displayForm(""); // Display This if the the user loads the page
+            }
+        ?>
+
         <div class="notification">
             <p class="get_notified">GET NOTIFIED WHEN WE LAUNCH</p>
-            <form action="">
-                <input class="email" type="email" name="email" id="">
-                <button class="submit" type="submit">Get Notified</button>
-            </form>
+            <?php 
+                function displayForm($message){
+            ?>
+                <p> <?php if($message) echo $message ?> </p>
+
+                <form action="">
+                    <input class="email" type="email" name="email" id="">
+                    <button class="submit" type="submit" name="submitButton">Get Notified</button>
+                </form>
+            <?php } ?>
         </div>
     </main>
   
+<?php 
+    function processForm(){
+        $requiredField = "email"; 
 
+        if(!isset($_POST[$requiredField]) or !trim($_POST[$requiredField])){
+            displayForm("Please enter a valid email");
+        }else{
+            insertToDb(); // if there is no missing field , display the congrats/ thenks message
+            displayForm("We have gotten your email and you will be notified when the app is launched.");
+        }
+    }
+?>
 
 
 <?php
     function  insertToDb(){
-        $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-        //  Getting info from enviromental variables
-        $server = $url["host"];
-        $username = $url["user"];
-        $password = $url["pass"];
-        $db = substr($url["path"], 1);
+        $dsn = "mysql:host=ftpupload.net;dbname=epiz_25618144_avoidme";
+        $username = "epiz_25618144";
+        $password = "hx490qf7";
 
-        $dsn = "mysql:host=". $server . ";dbname=" . $dsn;
         try{
             $conn = new PDO($dsn, $username, $password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -57,20 +80,18 @@
 
         $email = $_POST["email"];
 
-        $sql = "INSERT INTO (clientName, mobile, emailAddress, contactDate, messages )  VALUES(:clientName, :mobile, :emailAddress,  :orderDate,:messages)";
+        $sql = "INSERT INTO avoidMe(email)  VALUES(:emailAddress)";
 
         try{
             $st = $conn->prepare($sql);
-            $st->bindValue(":clientName", $compName, PDO::PARAM_STR);
-            $st->bindValue(":mobile", $phoneNumber, PDO::PARAM_STR);
             $st->bindValue(":emailAddress", $email, PDO::PARAM_STR);
-            $st->bindValue(":messages", $messages, PDO::PARAM_STR);
-            $st->bindValue(":orderDate", $contactDate, PDO::PARAM_STR);
             $st->execute();
         }catch(PDOException $e){
             die("Query failed: ". $e->getMessage());
         }
     }
+
+    
 ?>
  
 
