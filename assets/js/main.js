@@ -15,10 +15,10 @@ setInterval(() => {
     let hours = hoursRemaining(days.remainingMilSec, newNow)
     let mins = minRemaining(hours.remainingMilSec, newNow)
     let secs = secRemaining(mins.remainingMilSec, newNow)
-    monthsText.innerHTML = months.months + '<span class="timerColumn">:</span>'
-    daysText.innerHTML =  days.days + '<span class="timerColumn">:</span>'
-    hoursText.innerHTML = hours.hours + '<span class="timerColumn">:</span>'
-    minsText.innerHTML = mins.mins + '<span class="timerColumn">:</span>'
+    monthsText.innerHTML = months.months 
+    daysText.innerHTML =  days.days 
+    hoursText.innerHTML = hours.hours 
+    minsText.innerHTML = mins.mins
     secsText.innerHTML = secs.secs 
 }, 1000)
 

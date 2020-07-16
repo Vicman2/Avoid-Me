@@ -86,44 +86,7 @@ nav{
     align-self: center;
     margin: 10px 0px;
 }
-.the_CountDown{
-    background: #3F3D56;
-}
 
-.countdown_text{
-    font-family: 'Nunito Sans', sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 36px;
-    line-height: 47px;
-    text-align: center;
-    color: #3F3D56;
-    width: 100%;
-}
-.timer{
-    display: flex;
-    justify-content: center;
-    font-family: 'Nunito Sans', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 64px;
-    line-height: 83px;
-    display: flex;
-    align-items: flex-end;
-    color: #FFFFFF;
-}
-.time_note{
-    display: flex;
-    justify-content: flex-start;
-}
-.time_note p{
-    font-family: 'Nunito Sans', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 23px;
-    color: #FFFFFF;
-}
 .btn{
     background: #FDA741;
     border: 1px solid #FDA741;
@@ -291,7 +254,7 @@ nav{
     top: 0;
     left: 0;
     right: 0;
-    bottom:  0;
+    bottom: 0;
     background-color: rgba(0, 0, 0, 0.678);
     display: flex;
     flex-direction: column;
@@ -326,6 +289,69 @@ nav{
     transform: translateY(-100%);
     transition: opacity 500ms, transform 500ms;
 }
+
+.the_CountDown{
+    background: #3F3D56;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto 180px;
+    padding: 31px 80px;
+}
+
+.countdown_text{
+    font-family: 'Nunito Sans', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 47px;
+    text-align: center;
+    color: #3F3D56;
+    width: 100%;
+}
+.timer{
+    display: flex;
+    justify-content: center;
+    font-family: 'Nunito Sans', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 83px;
+    display: flex;
+    align-items: flex-end;
+    color: #FFFFFF;
+}
+.oneTime{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 50px;
+}
+.timeValue{
+    font-family: 'Nunito Sans', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 64px;
+    color: #FFFFFF;
+    margin: 0;
+}
+.column_timer{
+    color: #C4C4C4;
+    font-size: 64px;
+    margin-top: -50px;
+}
+.timeTitle{
+    font-family: 'Nunito Sans', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    color: #FFFFFF;
+    margin-top: 0;
+
+}
+
 
 
 @media(max-width:900px){
