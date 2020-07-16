@@ -133,6 +133,23 @@ $(document).ready(function(){
         ]
       });
   });
+  let closeIcon  = document.getElementById('close_modal');
+  let modalImage = document.getElementById('modalSrc');
+  let modal = document.getElementsByClassName('modal')[0]
+  let slideElements =  document.getElementsByClassName('image_Slider')
+  for(let i = 0; i < slideElements.length; i++){
+    slideElements[i].addEventListener('click', (event) => {
+      modal.classList.remove('Hide_Modal')
+      modal.classList.add('Show_Modal')
+      let src = slideElements[i].src;
+      modalImage.src = src
+    })
+  }
+
+  closeIcon.addEventListener('click', (event) => {
+    modal.classList.remove('Show_Modal')
+    modal.classList.add('Hide_Modal')
+  })
 
 
 
