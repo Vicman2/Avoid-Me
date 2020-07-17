@@ -159,35 +159,39 @@
             </div>
         </div>
 
-        <!-- <?php 
+        <p class="get_notified">GET NOTIFIED WHEN WE LAUNCH</p>
+        <p class="belong">Be among the first to be notified when we launch</p>
+        <form action="" method="post" id="notification_form">
+            <div class="formInput">
+                <input type="email" name="email" id="email" placeholder="Email" >
+                <small id="errorMsg"></small>
+            </div>
+            <div class="submit_btn_wrp">
+                <button class="btn" type="submit">Get Notified</button>
+            </div>
+        </form>
+
+        <?php 
             if(isset($_POST["submitButton"])){
                 processForm(); // If the user submits the form, call this function
             }else{
                 displayForm(""); // Display This if the the user loads the page
             }
-        ?> -->
-
-        <!-- <div class="notification">
-            <p class="get_notified">GET NOTIFIED WHEN WE LAUNCH</p>
-            <p> </p>
-            <form method="POST" id="notification_form">
-                <input type="email" name="email" id="email">
-                <button type="submit"> Get Notified</button>
-            </form> -->
-            <!-- <?php 
+        ?> 
+        <?php 
                 function displayForm($message){
-            ?>
+        ?>
                 <p> <?php if($message) echo $message ?> </p>
                 <form method="post">
                     <input class="email" type="email" name="email" id="" />
                     <input class="submit" value="Get Notified" type="submit" name="submitButton" />
                 </form>
-            <?php } ?> -->
+            <?php } ?> 
         </div>
     </main>
 
   
-<!-- <?php 
+    <?php 
     function processForm(){
         $requiredField = "email"; 
 
@@ -198,10 +202,10 @@
             displayForm("We have gotten your email and you will be notified when the app is launched.");
         }
     }
-?> -->
+?> 
 
 
-<!-- <?php
+    <?php
     function  insertToDb(){
         $dsn = "mysql:host=sql209.epizy.com;dbname=epiz_25618144_avoidme";
         $username = "epiz_25618144";
@@ -228,11 +232,15 @@
     }
 
     
-?> -->
-    <!-- <footer>
-        <p>© Avoid me, Inc. 2020. All rights reserved</p>
-        <p></p>
-    </footer> -->
+?> 
+    <footer>
+        <p class="footer_text">© Avoid me, Inc. 2020. All rights reserved</p>
+        <p class="footer_socials">
+            <img src="./assets/images/facebook.png" alt="">
+            <img src="./assets/images/twitter.png" alt="">
+            <img src="/assets/images/instagram.png" alt="">
+        </p>
+    </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./assets/js/slick.min.js"></script>
     <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>

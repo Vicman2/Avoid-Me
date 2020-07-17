@@ -152,6 +152,26 @@ $(document).ready(function(){
   })
 
 
+  // Form validation
+
+  let email = document.getElementById('email');
+  let subBtn = document.getElementById('notification_form')
+  let errorMessage = document.getElementById('errorMsg')
+
+  subBtn.addEventListener('submit', (event)=> {
+    event.preventDefault();
+    let emailRegex =  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    if(!emailRegex.test(email.value)){
+      event.preventDefault();
+      email.classList.add('error');
+      errorMessage.innerHTML = "Please enter a valid email";
+    }
+  })
+
+
+
+
+
 
 
 
