@@ -232,6 +232,7 @@ nav{
     flex-direction: column;
     justify-content: space-around;
     align-items: center ;
+    z-index: 900;
 }
 .modal p{
     text-align: right;

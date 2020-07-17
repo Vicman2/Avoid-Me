@@ -21,7 +21,7 @@
     <main>
         <div class="landing">
             <div class="text_actions" data-aos="zoom-out-down">
-                <p class="avoid_warn">Avoid people with ease
+                <p class="avoid_warn">Avoid people with ease<br>
                     Just a notification from us</p>
                 <p class="app_detail">This app helps you avoid people you
                      wish not to see and provides alternative route for you.</p>
