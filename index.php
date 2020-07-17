@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/slick-theme.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Avoid me</title>
 </head>
 <body>
@@ -19,8 +20,7 @@
     </header>
     <main>
         <div class="landing">
-
-            <div class="text_actions">
+            <div class="text_actions" data-aos="zoom-out-down">
                 <p class="avoid_warn">Avoid people with ease
                     Just a notification from us</p>
                 <p class="app_detail">This app helps you avoid people you
@@ -29,7 +29,7 @@
                     <button  class="btn" onclick="window.location.href='#notification_form';">Get Notified</button>
                 </div>
             </div>
-            <div class="img_on_desktop">
+            <div class="img_on_desktop" data-aos="zoom-out-left">
                 <img src="./assets/images/Screens.png" alt="">
             </div>
         </div>
@@ -44,7 +44,7 @@
                 </div>
             </div> 
             <div class="digital_quest">
-                <div>
+                <div data-aos="zoom-in-up">
                     <p class="digital">Are you still the window type?</p>
                     <p class="digital">You need to go digital !</p>
                     <p class="smart_way">The new  smart way to avoid people is to use avoid me, 
@@ -56,15 +56,15 @@
         </div>
 
         <div class="feature_section">
-            <p class="feature_text">APP FEATURES</p>
+            <p class="feature_text" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">APP FEATURES</p>
             <div class="featuring">
                 <div class="feature_column">
-                    <div class="feature">
+                    <div class="feature" data-aos="fade-down-right">
                         <img src="./assets//images/gprsIcon.png" alt="GPRS">
                         <p class="feature_name">GPS Feature</p>
                         <p class="feature_detials">we use the gps feature to keep of track locations</p>
                     </div>
-                    <div class="feature">
+                    <div class="feature" data-aos="fade-left" data-aos="fade-down-left">
                         <img src="./assets//images/gprsIcon.png" alt="GPRS">
                         <p class="feature_name">Maximum Security</p>
                         <p class="feature_detials">This app is designed to protect users information</p>
@@ -79,7 +79,7 @@
                         <p class="feature_name">Saves to Cloud</p>
                         <p class="feature_detials">All informations are saved  to cloud avoid loses</p>
                     </div>
-                    <div class="feature">
+                    <div class="feature" data-aos="fade-up-left">
                         <img src="./assets//images/gprsIcon.png" alt="GPRS">
                         <p class="feature_name">Perfectly designed</p>
                         <p class="feature_detials">The interface of the app was carefully designed </p>
@@ -89,7 +89,7 @@
         </div>
 
         <div class="app_review">
-            <p class="preview_header">APP PREVIEW</p>
+            <p class="preview_header" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">APP PREVIEW</p>
             <p class="quick_view">Take a quick view of the awesome screens of our app</p>
             <div class="myCarousel">
                 <div class="cells">
@@ -121,7 +121,7 @@
         </div>
 
         <div class="countDown">
-            <p class="countdown_text">COUNTDOWN TO RELEASE</p>
+            <p class="countdown_text" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">COUNTDOWN TO RELEASE</p>
             <div class="the_CountDown">
 
                 <div class="oneTime">
@@ -159,19 +159,10 @@
             </div>
         </div>
 
-        <p class="get_notified">GET NOTIFIED WHEN WE LAUNCH</p>
+        <p class="get_notified" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">GET NOTIFIED WHEN WE LAUNCH</p>
         <p class="belong">Be among the first to be notified when we launch</p>
-        <form action="" method="post" id="notification_form">
-            <div class="formInput">
-                <input type="email" name="email" id="email" placeholder="Email" >
-                <small id="errorMsg"></small>
-            </div>
-            <div class="submit_btn_wrp">
-                <button class="btn" type="submit">Get Notified</button>
-            </div>
-        </form>
 
-        <?php 
+        <?php
             if(isset($_POST["submitButton"])){
                 processForm(); // If the user submits the form, call this function
             }else{
@@ -182,9 +173,14 @@
                 function displayForm($message){
         ?>
                 <p> <?php if($message) echo $message ?> </p>
-                <form method="post">
-                    <input class="email" type="email" name="email" id="" />
-                    <input class="submit" value="Get Notified" type="submit" name="submitButton" />
+                <form action="" method="POST" id="notification_form">
+                    <div class="formInput">
+                        <input type="email" name="email" id="email" placeholder="Email" >
+                        <small id="errorMsg"></small>
+                    </div>
+                    <div class="submit_btn_wrp">
+                        <button class="btn" type="submit" name="submitButton">Get Notified</button>
+                    </div>
                 </form>
             <?php } ?> 
         </div>
@@ -240,10 +236,12 @@
             <img src="./assets/images/twitter.png" alt="">
             <img src="/assets/images/instagram.png" alt="">
         </p>
+
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script type="text/javascript" src="./assets/js/slick.min.js"></script>
     <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>
 </html>

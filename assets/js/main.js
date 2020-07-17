@@ -1,3 +1,11 @@
+// Animation on scrool
+
+AOS.init();
+
+
+
+
+
 //  Timmer
 
 let monthsText = document.getElementById('monthTime')
@@ -167,6 +175,8 @@ $(document).ready(function(){
       errorMessage.innerHTML = "Please enter a valid email";
     }
   })
+
+
 
 
 

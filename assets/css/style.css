@@ -1,6 +1,7 @@
 body{
     background-color: #FFFFFF;
     margin: 0;
+    outline: none;
 }
 
 nav{
@@ -203,7 +204,7 @@ nav{
 }
 .slide_container{
     width: 222px;
-    height: 450px;
+    height: 510px;
 }
 .slide_container img{
     width: 100%;
@@ -426,7 +427,6 @@ footer{
     margin-top: 5px;
     padding: 3px 10px;
     color:  #721c24;
-    background-color: #f8d7da;;
 }
 
 
@@ -489,6 +489,10 @@ footer{
         width: 255.87px;
         height: 380px;
     }
+    .modal img{
+        width: 250px;
+        height: 410px;
+    }
     .phone_container_onPurple{
         width: 171px;
         height: 314px;
@@ -547,6 +551,10 @@ footer{
     .footer_socials img{
         height:14px ;
         width: 14px;
+    }
+    .slide_container{
+        width: 222px;
+        height: 400px;
     }
 }
 @media(max-width: 500px){
