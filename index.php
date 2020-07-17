@@ -173,7 +173,7 @@
                 function displayForm($message){
         ?>
                 <p> <?php if($message) echo $message ?> </p>
-                <form action="" method="POST" id="notification_form">
+                <form method="post" id="notification_form">
                     <div class="formInput">
                         <input type="email" name="email" id="email" placeholder="Email" >
                         <small id="errorMsg"></small>

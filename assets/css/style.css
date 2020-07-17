@@ -453,14 +453,18 @@ footer{
         font-size: 24px;
         line-height: 31px;
         margin-top: 30px;
+        padding-right: 45px;
+        max-width: 80% ;
     }
     .app_detail{
         width: 100%;
         font-size: 14px;
         line-height: 18px;
+        max-width: 80%
     }
     .text_actions{
         margin: auto 45px;
+        margin-right: 0;
     }
     .img_on_desktop{
         margin-top: 27px;
